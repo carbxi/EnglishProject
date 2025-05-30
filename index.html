@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Self Harm & Addiction Songs</h1>
+      <div id="song-list">
+        <!-- First Step -->
+        <div class="song-container" data-song-id="FS">
+          <div class="song-header">
+            <img
+              src="songs/FS/cover.jpg"
+              alt="The First Step"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/31qJqvH7SBgj6P3w2zMtf9?si=db68e591ee694413" target="_blank"
+                  >The First Step</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/13pwqHspIhcy1IcAooefso?si=eef8b0721b214ac9"
+                  target="_blank"
+                  >Will Wood and the Tapeworms</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('FS')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-FS">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'FS')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('FS')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-FS">
+            <h3>Why this song?</h3>
+            <p>
+              This song fits the theme well, as it follows the artist’s struggle with alcoholism. The title “The First Step” refers to the first step in Alcoholics Anonymous (AA) programs: admitting you are powerless over your addiction. This is shown in lyrics like <button type="button" class="link-button" onclick="seekToTime('FS', 83.5)">We’ve had enough power since the blackout started, for an EKG for the broken hearted</button>. However, throughout the song, Will puts a spin on the phrase, suggesting there’s no point in recovery if he’s powerless. This attitude is reflected in lines like <button type="button" class="link-button" onclick="seekToTime('FS', 90)">I’d try to see the glass as half full, but I'd probably just drink that too</button>, or <button type="button" class="link-button" onclick="seekToTime('FS', 117)">So bring me the hair of the dog that bit me, so I can clone it and have a little more</button>, where “the hair of the dog that bit me” is an idiom about drinking to curb the effects of a hangover.
+            </p><br>
+            <p>
+              As becomes a pattern in this playlist, the song is actually quite upbeat while covering this somber subject matter. I chose songs in that vein for the unique perspective they offer. Balancing satire or sincerity without killing the mood is difficult, but I think it’s the best way to capture the highs of addiction through art.
+            </p>
+
+          </div>
+
+          <audio id="audio-FS" preload="metadata">
+            <source src="songs/FS/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- Sweet Tooth -->
+        <div class="song-container" data-song-id="ST">
+          <div class="song-header">
+            <img
+              src="songs/ST/cover.jpg"
+              alt="Sweet Tooth"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/2qROUDWN1RCJoyiVSr6ifm?si=4f8a582e180e49e4" target="_blank"
+                  >Sweet Tooth</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/2LgklPXmvWVOQfzPVkuChg?si=8d1324439eae4119"
+                  target="_blank"
+                  >Scott Helman</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('ST')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-ST">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'ST')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('ST')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-ST">
+            <h3>Why this song?</h3>
+            <p>In a similar vein to the last song, “Sweet Tooth” follows a pill addict, using candy as symbolism. While having a sweet tooth usually means enjoying candy, in the context of this song, it refers to someone addicted to pills. Lyrics like <button type="button" class="link-button" onclick="seekToTime('ST', 4)">You know I gotta have it, so I rifle through the cabinet</button> highlight both the symbolism and the extent of the addiction. One subject I appreciate in this song is the desperation of addiction, for example: <button type="button" class="link-button" onclick="seekToTime('ST', 86)">I exploit my opportunities, some broken hearts, numb cavities</button>. I believe this lyric is about using any excuse to get access to medication—broken hearts for pills like Xanax, or numbing dental work for painkillers.</p>
+          </div>
+
+          <audio id="audio-ST" preload="metadata">
+            <source src="songs/ST/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- I deserve to Bleed -->
+        <div class="song-container" data-song-id="DB">
+          <div class="song-header">
+            <img
+              src="songs/DB/cover.jpg"
+              alt="I Deserve to Bleed"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/27cw0tNJKQQW2CJMGcCfZb?si=f52273c2236a439c" target="_blank"
+                  >I Deserve to Bleed</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/1EbbJiG9LzlH2i7fCjhkvv?si=30097877ecd04874"
+                  target="_blank"
+                  >Sushi Soucy</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('DB')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-DB">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'DB')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('DB')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-DB">
+            <h3>Why this song?</h3>
+            <p>This song is not just about addiction but also about self-harm and hating one's body. The themes, especially the psychology and reasoning behind self-harm, will be explored further in my analytical artifact, but I think now is a good time to highlight some examples. <button type="button" class="link-button" onclick="seekToTime('DB', 7.5)">I wanna cover myself head to toe in super sexy scars, cause I mean aren’t you supposed to burn if you’re a star?</button> This lyric, delivered in a semi-joking tone, touches on a common reason for self-harming behavior: an external reflection of internal pain (just as stars burn, people in pain should scar). Another lyric focuses on intrusive thoughts: <button type="button" class="link-button" onclick="seekToTime('DB', 24)">The scary thoughts are spreading like a weed, the thoughts that say that I deserve to bleed</button>, showing how they can completely overwhelm someone and cause extreme distress.</p>
+          </div>
+
+          <audio id="audio-DB" preload="metadata">
+            <source src="songs/DB/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- Say it ain't so -->
+        <div class="song-container" data-song-id="SA">
+          <div class="song-header">
+            <img
+              src="songs/SA/cover.jpg"
+              alt="Say it ain't so"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/4YPhn26bIFm2KUkL1VLzQG?si=18aa60bcd05647dc" target="_blank"
+                  >Say it ain't so</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/3jOstUTkEu2JkjvRdBA5Gu?si=d5dbeb0b93234441"
+                  target="_blank"
+                  >Weezer</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('SA')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-SA">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'SA')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('SA')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-SA">
+            <h3>Why this song?</h3>
+            <p>This is another song about alcoholism, though it's much less upbeat than the last. “Say It Ain’t So” explores some pretty dark places, as it’s told from the perspective of a teenage boy. The singer’s father began drinking before leaving when he was very young, and the song describes the moment he realized his stepfather’s alcoholism would lead them down the same path. Lines like <button type="button" class="link-button" onclick="seekToTime('SA', 84)">Your drug is a heartbreaker</button> reflect how alcohol can tear families apart. Another line, <button type="button" class="link-button" onclick="seekToTime('SA', 185)">Like father, stepfather, the son is drowning in the flood</button>, speaks to cycles of abuse and how others can get caught up in the pain of addiction. Including more serious songs like this is important for the playlist because, in reality, addiction is a very serious subject.</p>
+          </div>
+
+          <audio id="audio-SA" preload="metadata">
+            <source src="songs/SA/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- Small Cuts -->
+        <div class="song-container" data-song-id="SC">
+          <div class="song-header">
+            <img
+              src="songs/SC/cover.jpg"
+              alt="Small Cuts"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/2vd4ULh4EXAeIyOoe9JZ30?si=18395d3ce2f048ea" target="_blank"
+                  >Small Cuts</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/29TCgxO6qzQx4O3pjUIMzn?si=4f5566242ca6454c"
+                  target="_blank"
+                  >The Brobecks</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('SC')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-SC">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'SC')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('SC')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-SC">
+            <h3>Why this song?</h3>
+            <p>This is another one about self-harm. While the overall topic is the same, the emotions it expresses are quite different, and I think it covers the subject in its own way. Within this song, the contrasting ideas of seeking attention and hiding addiction are both explored. The opening lines describe covering up cuts: <button type="button" class="link-button" onclick="seekToTime('SC', 25)">To cover up small cuts, hid ‘neath the bandages, under her sleeve</button>. The following lines describe the same girl’s desire for attention: <button type="button" class="link-button" onclick="seekToTime('SC', 38)">She just wants attention, we all want attention, she just wants it more than she’d have you believe</button>. These contrasting ideas are powerful in a song like this, because they reflect the emotional roller coaster of depression and attention-seeking behavior, jumping between opposing emotional states and needs.</p>
+          </div>
+
+          <audio id="audio-SC" preload="metadata">
+            <source src="songs/SC/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- Bad Habit -->
+        <div class="song-container" data-song-id="BH">
+          <div class="song-header">
+            <img
+              src="songs/BH/cover.jpg"
+              alt="Bad Habit"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <div class="song-title">
+                <a href="https://open.spotify.com/track/0AEPP2eTyzjU0C6IEmroVO?si=b25be27c12dd4e9b" target="_blank"
+                  >Bad Habit</a
+                >
+              </div>
+              <div class="song-artist">
+                <a
+                  href="https://open.spotify.com/artist/5JqX1glXPg6428ubI1w72i?si=2a7302ea86f14a12"
+                  target="_blank"
+                  >The Dresden Dolls</a
+                >
+              </div>
+            </div>
+            <button class="play-button" onclick="togglePlay('BH')">
+              ▶
+            </button>
+          </div>
+
+          <div class="progress-container" id="progress-BH">
+            <div
+              class="progress-bar"
+              onclick="handleProgressClick(event, 'BH')"
+            >
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time-display">
+              <span class="current-time">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+          </div>
+
+          <button class="expand-button" onclick="toggleDescription('BH')">
+            Show Details ▼
+          </button>
+
+          <div class="song-description" id="description-BH">
+            <h3>Why this song?</h3>
+            <p>This song captures another form of reasoning behind self-harm. Pain can act as a distraction—a momentary reprieve from internal turmoil. When the singer says, <button type="button" class="link-button" onclick="seekToTime('BH', 9.5)">Pain goes shooting like a star, comfort hasn’t failed to follow so far</button>, they express that the aftermath of pain brings comfort—something I find quite relatable. Throughout the song, the artist repeatedly refers to the idea of quitting or recognizing the downside of their behavior. <button type="button" class="link-button" onclick="seekToTime('BH', 86)">I cherish the revolting thought, that even if I quit, there’s not a chance in hell I'd stop</button>, and <button type="button" class="link-button" onclick="seekToTime('BH', 31)">But the ugly marks are worth the momentary gain</button> are two examples. These lines help capture how self-destructive behaviors can become addictions like any other. This song is my favorite from the list—maybe because I find it the most relatable—but whatever the reason, I think it beautifully connects to my theme and reflects my perspective on the matter.</p>
+          </div>
+
+          <audio id="audio-BH" preload="metadata">
+            <source src="songs/BH/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
